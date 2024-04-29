@@ -1,31 +1,24 @@
-// Wait for the entire DOM to load before running the script
 document.addEventListener('DOMContentLoaded', function () {
-    // Retrieve the 'Start Your Adventure' button using its ID
-    const startButton = document.getElementById('startButton');
-    // Retrieve the 'Learn More' button using its ID
-    const learnMoreButton = document.getElementById('learnMoreButton');
-    // Retrieve the 'Rise' button using its ID
-    const riseButton = document.getElementById('riseButton');
-    // Retrieve the 'fake' button using its ID
-    const fakeButton = document.getElementById('fakeButton');
-    // Add a click event listener to the 'Start Your Adventure' button
-    startButton.addEventListener('click', function() {
-    // Redirect the user to the game page when the button is clicked
-        window.location.href = 'game.html';
-    });
-    // Add a click event listener to the 'Learn More' button
-    learnMoreButton.addEventListener('click', function() {
-        // Redirect the user to the about page when the button is clicked
-        window.location.href = 'about.html';
-    });
-    // Add a click event listener to the 'rise' button
-    riseButton.addEventListener('click', function() {
-        // Redirect the user to the about page when the button is clicked
-        window.location.href = 'game2.html';
-    });
-    // Add a click event listener to the 'fake' button
-    fakeButton.addEventListener('click', function() {
-        // Redirect the user to the about page when the button is clicked
-        window.location.href = 'gameover.html';
+    console.log('DOM fully loaded and parsed');
+    const buttons = [
+        { id: 'startButton', url: 'game.html' },
+        { id: 'learnMoreButton', url: 'about.html' },
+        { id: 'riseButton', url: 'game2.html' },
+        { id: 'fakeButton', url: 'gameover.html' },
+        { id: 'breakfastButton', url: 'game3.html' },
+        { id: 'diversionButton', url: 'gameover.html' }
+    ];
+
+    buttons.forEach(button => {
+        const element = document.getElementById(button.id);
+        if (element) {
+            console.log(`Adding listener to ${button.id}`);
+            element.addEventListener('click', function() {
+                console.log(`Redirecting to ${button.url}`);
+                window.location.href = button.url;
+            });
+        } else {
+            console.log(`${button.id} not found on this page.`);
+        }
     });
 });
