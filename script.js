@@ -6,7 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
         { id: 'riseButton', url: 'game2.html' },
         { id: 'fakeButton', url: 'gameover.html' },
         { id: 'breakfastButton', url: 'game3.html' },
-        { id: 'diversionButton', url: 'gameover.html' }
+        { id: 'diversionButton', url: 'gameover.html' },
+        { id: 'groceryButton', url: 'game4.html' },
+        { id: 'notsobadButton', url: 'gameover.html' },
+        { id: 'waitButton', url: 'game5.html' },
+        { id: 'tealeafButton', url: 'gameover.html' }
     ];
 
     buttons.forEach(button => {
